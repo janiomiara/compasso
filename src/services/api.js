@@ -1,5 +1,5 @@
 import axios from "axios"
-export const url = 'https://api.github.com';
+export const url = 'https://api.github.com/';
 
 const Api = axios.create({
   baseURL: url,
