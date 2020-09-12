@@ -1,8 +1,8 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import Nav from './index'
+import Nav from '../components/nav'
 
-import Provider from '../../providers'
+import Provider from '../providers'
 
 test('Testing children of the Nav component', () => {
   const { container } = render(

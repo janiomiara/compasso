@@ -5,7 +5,7 @@ import { useUsers } from '../../providers/user'
 import { BotaoSeach, ContainerForm } from './styles'
 
 const InputSearch = () => {
-  const [user, setUser] = useState()
+  const [user, setUser] = useState('')
   const { getUser } = useUsers()
 
   const submitForm = () => {
@@ -19,13 +19,13 @@ const InputSearch = () => {
         data-testid='input-search'
         fullWidth
         id='outlined-basic'
-        label='Search'
+        label='user-input'
+        value={user}
         variant='outlined'
-        value={''}
         onChange={(e) => setUser(e.target.value)}
       />
       <BotaoSeach>
-        <Search onClick={submitForm} />
+        <Search data-testid='submit' onClick={submitForm} />
       </BotaoSeach>
     </ContainerForm>
   )
