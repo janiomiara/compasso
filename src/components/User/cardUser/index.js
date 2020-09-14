@@ -1,4 +1,8 @@
 import React from 'react'
+import { GitHub, Archive, Users, UserPlus } from 'react-feather'
+import moment from 'moment'
+import { useUsers } from '../../../providers/user'
+import { colors } from '../../../styles/global'
 import {
   ButtonUser,
   ContainerStatus,
@@ -10,15 +14,6 @@ import {
   WrapperStatus,
   Wrapperuser,
 } from './styles'
-import { useUsers } from '../../../providers/user'
-import {
-  GitHub,
-  Archive,
-  Users,
-  UserPlus,
-} from 'react-feather'
-import moment from 'moment'
-import { colors } from '../../../styles/global'
 
 const UserDetails = () => {
   const { user, getRepo, getStarred } = useUsers()
@@ -35,9 +30,9 @@ const UserDetails = () => {
     <>
       {user && (
         <>
-          <Wrapperuser>
+          <Wrapperuser data-testid='wrapper-user'>
             <WrapperHeard>
-              <ImgUser src={avatar_url} alt={'profile pic'}/>
+              <ImgUser src={avatar_url} alt={'profile pic'} />
               <NameUser>{login}</NameUser>
               <SubTitle>Usuario</SubTitle>
             </WrapperHeard>
@@ -59,26 +54,25 @@ const UserDetails = () => {
 
             <ContainerStatus>
               <WrapperStatus>
-                <GitHub/>
+                <GitHub />
                 <p>Usuario desde</p>
                 <div>{formatData(created_at)}</div>
               </WrapperStatus>
 
-
               <WrapperStatus>
-                <Archive/>
+                <Archive />
                 <p>Repositorios</p>
                 <div>{public_repos}</div>
               </WrapperStatus>
 
               <WrapperStatus>
-                <Users/>
+                <Users />
                 <p>Seguidores</p>
                 <div>{followers}</div>
               </WrapperStatus>
 
               <WrapperStatus>
-                <UserPlus/>
+                <UserPlus />
                 <p>Seguindo</p>
                 <div>{following}</div>
               </WrapperStatus>

@@ -1,4 +1,6 @@
 import React from 'react'
+import { GitHub } from 'react-feather'
+import { useUsers } from '../../../providers/user'
 import {
   CardLiguagen,
   CardRepo,
@@ -7,11 +9,9 @@ import {
   RepoTitle,
   WrapperRepo,
 } from './styles'
-import { useUsers } from '../../../providers/user'
-import { GitHub } from 'react-feather'
 
 const UserRepo = () => {
-  const { user, getRepo } = useUsers()
+  const { user } = useUsers()
   return (
     <>
       {user.repo && (

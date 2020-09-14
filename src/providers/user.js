@@ -7,7 +7,7 @@ export const initialState = {
   usersList: '',
   user: '',
   loading: false,
-  error: null
+  error: null,
 }
 
 export const ActionTypes = {
@@ -31,7 +31,7 @@ export function reducer(state = initialState, action = Action) {
       return {
         ...state,
         loading: true,
-        error: false
+        error: false,
       }
     case ActionTypes.GET_USER:
       return {
@@ -39,19 +39,19 @@ export function reducer(state = initialState, action = Action) {
         ...state.user,
         usersList: [...state.usersList, action.user],
         user: action.user,
-        loading: false
+        loading: false,
       }
     case ActionTypes.GET_REPO:
       return {
         ...state,
         loading: false,
-        user: {...state.user,  repo: action.repo}
+        user: { ...state.user, repo: action.repo },
       }
     case ActionTypes.GET_STARRED:
       return {
         ...state,
         loading: false,
-        user: {...state.user,   starred: action. starred}
+        user: { ...state.user, starred: action.starred },
       }
     case ActionTypes.GET_USER_NOT_HISTORY:
       return {
@@ -63,7 +63,7 @@ export function reducer(state = initialState, action = Action) {
       return {
         ...state,
         error: true,
-        loading: false
+        loading: false,
       }
     default:
       return state
@@ -71,10 +71,12 @@ export function reducer(state = initialState, action = Action) {
 }
 
 export function useUsers() {
-  const [{ user, error,  usersList, loading }, dispatch] = useContext(UserContext)
+  const [{ user, error, usersList, loading }, dispatch] = useContext(
+    UserContext
+  )
 
   const getUser = async (nameUser) => {
-    dispatch({ type: ActionTypes.LOADING})
+    dispatch({ type: ActionTypes.LOADING })
     try {
       const { data } = await Api.get(`users/${nameUser}`)
       dispatch({ type: ActionTypes.GET_USER, user: data })
@@ -85,7 +87,7 @@ export function useUsers() {
   }
 
   const getStarred = async (nameUser) => {
-    dispatch({ type: ActionTypes.LOADING})
+    dispatch({ type: ActionTypes.LOADING })
     try {
       const { data } = await Api.get(`users/${nameUser}/starred`)
       dispatch({ type: ActionTypes.GET_STARRED, starred: data })
@@ -95,7 +97,7 @@ export function useUsers() {
   }
 
   const getRepo = async (nameUser) => {
-    dispatch({ type: ActionTypes.LOADING})
+    dispatch({ type: ActionTypes.LOADING })
     try {
       const { data } = await Api.get(`users/${nameUser}/repos`)
       dispatch({ type: ActionTypes.GET_REPO, repo: data })
@@ -112,7 +114,17 @@ export function useUsers() {
     }
   }
 
-  return { getUser, getRepo, getStarred, getUserHistory, user, usersList ,error, loading, dispatch}
+  return {
+    getUser,
+    getRepo,
+    getStarred,
+    getUserHistory,
+    user,
+    usersList,
+    error,
+    loading,
+    dispatch,
+  }
 }
 
 const UserProvider = ({ children }) => {

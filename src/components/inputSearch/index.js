@@ -15,16 +15,17 @@ const InputSearch = () => {
 
   return (
     <ContainerForm>
-      <WrapperSearch ><h3>Pesquisar Usuarios</h3>
-      <TextField
-        data-testid='input-search'
-        fullWidth
-        id='outlined-basic'
-        label='Search User'
-        value={user}
-        variant='outlined'
-        onChange={(e) => setUser(e.target.value)}
-      />
+      <WrapperSearch>
+        <h3>Pesquisar Usuarios</h3>
+        <TextField
+          data-testid='input-search'
+          fullWidth
+          id='outlined-basic'
+          label='Search User'
+          value={user}
+          variant='outlined'
+          onChange={(e) => setUser(e.target.value)}
+        />
       </WrapperSearch>
       <ButtonSearch disabled={!user} data-testid='submit' onClick={submitForm}>
         <Search />
