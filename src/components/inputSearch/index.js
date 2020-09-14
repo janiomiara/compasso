@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField'
 import { Search } from 'react-feather'
 import { useUsers } from '../../providers/user'
-import { ButtonSearch, ContainerForm } from './styles'
+import { ButtonSearch, ContainerForm, WrapperSearch } from './styles'
 
 const InputSearch = () => {
   const [user, setUser] = useState('')
@@ -15,6 +15,7 @@ const InputSearch = () => {
 
   return (
     <ContainerForm>
+      <WrapperSearch ><h3>Pesquisar Usuarios</h3>
       <TextField
         data-testid='input-search'
         fullWidth
@@ -24,6 +25,7 @@ const InputSearch = () => {
         variant='outlined'
         onChange={(e) => setUser(e.target.value)}
       />
+      </WrapperSearch>
       <ButtonSearch disabled={!user} data-testid='submit' onClick={submitForm}>
         <Search />
       </ButtonSearch>

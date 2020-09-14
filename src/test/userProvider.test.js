@@ -1,6 +1,7 @@
 import React from 'react'
 import { renderHook, act } from '@testing-library/react-hooks'
-import { UserProvider, useUsers } from '../providers/user'
+import { ActionTypes, UserProvider, useUsers } from '../providers/user'
+import { userMock } from '../mocks/userMock'
 
 test('Testing  initial state user context ', () => {
   const wrapper = ({ children }) => < UserProvider>{children}</ UserProvider>
@@ -10,10 +11,9 @@ test('Testing  initial state user context ', () => {
 
 test('Testing user context funciton getUser', async () => {
   const wrapper = ({ children }) => < UserProvider>{children}</ UserProvider>
-  const { result, waitForNextUpdate } = renderHook(() => useUsers(), { wrapper })
-  act(  () => {
-    result.current.getUser('janiomiara')
+  const { result, } = renderHook(() => useUsers(), { wrapper })
+  act(   () => {
+     result.current.dispatch({ type: ActionTypes.GET_USER, user: userMock })
   })
-  await waitForNextUpdate();
   expect(result.current.user.login).toBe('janiomiara')
 })

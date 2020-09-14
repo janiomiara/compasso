@@ -112,7 +112,7 @@ export function useUsers() {
     }
   }
 
-  return { getUser, getRepo, getStarred, getUserHistory, user, usersList ,error, loading}
+  return { getUser, getRepo, getStarred, getUserHistory, user, usersList ,error, loading, dispatch}
 }
 
 const UserProvider = ({ children }) => {

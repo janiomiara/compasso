@@ -4,7 +4,7 @@ export const ContainerStareed = styled.div`
   display: flex;
   width: 400px;
   height: 500px;
-  background: #c9ccb3;
+  background: #bfccc8;
   border-radius: 10px;
   flex-direction: column;
   align-items: center;
@@ -41,8 +41,9 @@ export const StarredCard = styled.div`
   display: flex;
   width: 100%;
   height: 200px;
-  background: #dbe0b3;
+  background: #4268ff;
   margin: 5px;
+  color: white;
   border-radius: 5px;
   align-items: center;
   padding: 20px;

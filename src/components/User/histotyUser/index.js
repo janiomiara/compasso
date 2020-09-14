@@ -1,5 +1,5 @@
 import React from 'react'
-import { useUsers } from '../../providers/user'
+import { useUsers } from '../../../providers/user'
 import { Container, ImgUser } from './styles'
 
 const HistoryUsers = () => {

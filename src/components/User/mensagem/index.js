@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../assets/img/github_sorry.png'
+import logo from '../../../assets/img/github_sorry.png'
 import { Container } from './styles'
 
 const Mensagem = () => {

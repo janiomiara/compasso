@@ -7,7 +7,7 @@ import {
   RepoTitle,
   WrapperRepo,
 } from './styles'
-import { useUsers } from '../../providers/user'
+import { useUsers } from '../../../providers/user'
 import { GitHub } from 'react-feather'
 
 const UserRepo = () => {

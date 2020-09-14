@@ -10,7 +10,7 @@ import {
   WrapperStatus,
   Wrapperuser,
 } from './styles'
-import { useUsers } from '../../providers/user'
+import { useUsers } from '../../../providers/user'
 import {
   GitHub,
   Archive,
@@ -18,7 +18,7 @@ import {
   UserPlus,
 } from 'react-feather'
 import moment from 'moment'
-import { colors } from '../../styles/global'
+import { colors } from '../../../styles/global'
 
 const UserDetails = () => {
   const { user, getRepo, getStarred } = useUsers()
