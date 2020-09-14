@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   ButtonUser,
-  Container,
   ContainerStatus,
   ImgUser,
   NameUser,
@@ -13,9 +12,7 @@ import {
 } from './styles'
 import { useUsers } from '../../providers/user'
 import {
-  GitCommit,
   GitHub,
-  MapPin,
   Archive,
   Users,
   UserPlus,
@@ -25,13 +22,10 @@ import { colors } from '../../styles/global'
 
 const UserDetails = () => {
   const { user, getRepo, getStarred } = useUsers()
-
   const {
     avatar_url,
     login,
-    updated_at,
     created_at,
-    location,
     public_repos,
     followers,
     following,
@@ -43,7 +37,7 @@ const UserDetails = () => {
         <>
           <Wrapperuser>
             <WrapperHeard>
-              <ImgUser src={avatar_url} alt={'profile pic'} />
+              <ImgUser src={avatar_url} alt={'profile pic'}/>
               <NameUser>{login}</NameUser>
               <SubTitle>Usuario</SubTitle>
             </WrapperHeard>
@@ -65,37 +59,26 @@ const UserDetails = () => {
 
             <ContainerStatus>
               <WrapperStatus>
-                <GitHub />
+                <GitHub/>
                 <p>Usuario desde</p>
                 <div>{formatData(created_at)}</div>
               </WrapperStatus>
 
-              <WrapperStatus>
-                <GitCommit />
-                <p>Último Commit</p>
-                <div>{formatData(updated_at)}</div>
-              </WrapperStatus>
 
               <WrapperStatus>
-                <MapPin />
-                <p>Localização</p>
-                <div>{location}</div>
-              </WrapperStatus>
-
-              <WrapperStatus>
-                <Archive />
+                <Archive/>
                 <p>Repositorios</p>
                 <div>{public_repos}</div>
               </WrapperStatus>
 
               <WrapperStatus>
-                <Users />
+                <Users/>
                 <p>Seguidores</p>
                 <div>{followers}</div>
               </WrapperStatus>
 
               <WrapperStatus>
-                <UserPlus />
+                <UserPlus/>
                 <p>Seguindo</p>
                 <div>{following}</div>
               </WrapperStatus>

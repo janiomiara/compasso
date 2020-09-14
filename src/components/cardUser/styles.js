@@ -9,7 +9,7 @@ export const WrapperHeard = styled.div`
   align-content: center;
 `
 export const ImgUser = styled.img`
-  width: 300px;
+  width: 200px;
   border-radius: 50%;
   box-shadow: 0px 0px 20px -6px rgba(0, 0, 0, 0.71);
   animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -30,10 +30,9 @@ export const ImgUser = styled.img`
 
 export const Wrapperuser = styled.div`
   display: flex;
-  width: 567px;
-  height: 72%;
+  width: 400px;
+  height: 500px;
   background: #afb4b9;
-  border: 1px solid #989898;
   border-radius: 10px;
   flex-direction: column;
   justify-content: space-between;
@@ -62,12 +61,12 @@ export const ButtonUser = styled.button`
 
 export const NameUser = styled.h3`
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
 `
 export const SubTitle = styled.p`
-  font-size: 12px;
+  font-size: 10px;
   text-transform: uppercase;
 `
 export const ContainerStatus = styled.div`

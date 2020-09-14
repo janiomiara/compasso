@@ -2,13 +2,14 @@ import styled from 'styled-components'
 
 export const ContainerRepo = styled.div`
   display: flex;
-  width: 567px;
-  height: 72%;
+ width: 400px;
+  height: 500px;
   background: #c9ccb3;
   border-radius: 10px;
   flex-direction: column;
   align-items: center;
   padding: 10px;
+   margin: 5px;
 `
 
 export const WrapperRepo = styled.div`

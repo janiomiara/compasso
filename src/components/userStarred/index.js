@@ -11,17 +11,17 @@ import {
 } from './styles'
 
 const UserStarred = () => {
-  const { starred } = useUsers()
+  const { user } = useUsers()
   return (
     <>
-      {starred && (
+      {user.starred && (
         <ContainerStareed>
           <StarredTitle>
             <GitHub />
             REPOSITORIOS MAIS VISITADOS
           </StarredTitle>
           <WrapperStarred>
-            {starred.map((item) => {
+            {user.starred.map((item) => {
               return (
                 <StarredCard>
                   <CardTitle>{item.name}</CardTitle>
